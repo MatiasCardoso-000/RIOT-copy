@@ -1,10 +1,10 @@
 
-interface PrivateRoutesParams {
-  children: React.ReactNode;
-}
+// interface PrivateRoutesParams {
+//   children: React.ReactNode;
+// }
 
 
-export const PrivateRoutes = ({children}:PrivateRoutesParams) => {
+export const PrivateRoutes = () => {
   return (
     <div>
       <h1>Private Routes</h1>

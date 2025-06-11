@@ -15,11 +15,13 @@ export const ProductCard = ({product}: ProductCardProps) => {
 
     <div className="bg-zinc-50 rounded-lg shadow-md hover:shadow-lg transition-shadow">
       <div className="relative">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-88 object-cover"
-        />
+        <Link to={`/product-description/${product.name}`}>
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-88 object-cover"
+          />
+        </Link>
         {/* <button
           className={`absolute bg-white top-3 right-3 p-2 rounded-full transition-colors shadow-md cursor-pointer hover:bg-zinc-200`}
         >
