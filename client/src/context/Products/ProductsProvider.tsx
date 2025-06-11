@@ -13,7 +13,7 @@ export const ProductsProvider = ({
       name: "Remera Over Size Blanca",
       price: 15000,
       image:
-        "../../../public/IMG-20250609-WA0001.jpg",
+        "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0001.jpg",
       description:
         "Remera Over Size de algodón 100% de alta calidad.",
       category: "Básica",
@@ -25,7 +25,7 @@ export const ProductsProvider = ({
       name: "Remera Over Size Negra",
       price: 15000,
       image:
-        "../../../public/IMG-20250609-WA0002.jpg",
+        "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0002.jpg",
       description:
         "Remera Over Size de algodón 100% de alta calidad.",
       category: "Básica",
@@ -37,7 +37,7 @@ export const ProductsProvider = ({
       name: "Remera Over Size Marrón",
       price: 15000,
       image:
-        "../../../public/IMG-20250609-WA0003.jpg",
+        "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0003.jpg",
       description: "Remera Over Size de algodón 100% de alta calidad.",
       category: "Básica",
       sizes: ["M", "L", "XL", "XXL"],
@@ -48,7 +48,7 @@ export const ProductsProvider = ({
       name: "Remera Over Size Gris",
       price: 15000,
       image:
-        "../../../public/IMG-20250609-WA0004.jpg",
+        "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0004.jpg",
       description: "Remera Over Size de algodón 100% de alta calidad.",
       category: "Básica",
       sizes: ["S", "M", "L", "XL"],
@@ -58,7 +58,7 @@ export const ProductsProvider = ({
       id: 5,
       name: "Remera Básica Rosada",
       price: 12000,
-      image: "../../../public/remeras_basicas.jpg",
+      image: "https://matiascardoso-000.github.io/RIOT-copy/remeras_basicas.jpg",
       description: "Remera Básica de algodón 100% de alta calidad.",
       category: "Básica",
       sizes: ["M", "L", "XL", "XXL"],
@@ -69,7 +69,7 @@ export const ProductsProvider = ({
       name: "Remera Básica Marrón Claro",
       price: 12000,
       image:
-        "../../../public/remeras_basicas_beige.jpg",
+        "https://matiascardoso-000.github.io/RIOT-copy/remeras_basicas_beige.jpg",
       description: "Remera Básica de algodón 100% de alta calidad.",
       category: "Básica",
       sizes: ["S", "M", "L", "XL"],
