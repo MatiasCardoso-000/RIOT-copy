@@ -1,6 +1,6 @@
 // import { Heart,  ShoppingCart} from "lucide-react";
 import type { Product } from "../../types/product.interface";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 interface ProductCardProps {
   product: Product; 
@@ -11,11 +11,12 @@ export const ProductCard = ({product}: ProductCardProps) => {
   //   addToCart(product, selectedSize, selectedColor);
   // };
 
+
   return (
 
     <div className="bg-zinc-50 rounded-lg shadow-md hover:shadow-lg transition-shadow">
       <div className="relative">
-        <Link to={`/product-description/${product.name}`}>
+        <Link to={`/RIOT-copy/product-description/${product.id}`}>
           <img
             src={product.image}
             alt={product.name}
@@ -30,7 +31,7 @@ export const ProductCard = ({product}: ProductCardProps) => {
       </div>
       
       <div className="p-4">
-        <Link to={`/product-description/${product.name}`} className="block mb-2">
+        <Link to={`/RIOT-copy/product-description/${product.id}`} className="block mb-2">
           <h3 className="text-lg font-semibold text-zinc-800 mb-2">{product.name}</h3>
         </Link>
         <p className="text-zinc-600 text-sm mb-3">{product.description}</p>

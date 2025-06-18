@@ -14,8 +14,7 @@ export const ProductsProvider = ({
       price: 15000,
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0001.jpg",
-      description:
-        "Remera Over Size de algodón 100% de alta calidad.",
+      description: "Remera Over Size de algodón 100% de alta calidad.",
       category: "Básica",
       sizes: ["S", "M", "L", "XL", "XXL"],
       colors: ["Negro", "Blanco", "Gris"],
@@ -26,8 +25,7 @@ export const ProductsProvider = ({
       price: 15000,
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0002.jpg",
-      description:
-        "Remera Over Size de algodón 100% de alta calidad.",
+      description: "Remera Over Size de algodón 100% de alta calidad.",
       category: "Básica",
       sizes: ["S", "M", "L", "XL"],
       colors: ["Azul", "Negro", "Gris"],
@@ -49,6 +47,8 @@ export const ProductsProvider = ({
       price: 15000,
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0004.jpg",
+      imageDetail:
+        "https://matiascardoso-000.github.io/RIOT-copy/modelos/IMG-20250615-WA0002.jpg",
       description: "Remera Over Size de algodón 100% de alta calidad.",
       category: "Básica",
       sizes: ["S", "M", "L", "XL"],
@@ -58,8 +58,11 @@ export const ProductsProvider = ({
       id: 5,
       name: "Remera Básica Rosada",
       price: 12000,
-      image: "https://matiascardoso-000.github.io/RIOT-copy/remeras_basicas.jpg",
+      image:
+        "https://matiascardoso-000.github.io/RIOT-copy/remeras_basicas.jpg",
       description: "Remera Básica de algodón 100% de alta calidad.",
+      imageDetail:
+        "https://matiascardoso-000.github.io/RIOT-copy/Remera-Modelo-Rosa.png",
       category: "Básica",
       sizes: ["M", "L", "XL", "XXL"],
       colors: ["Negro", "Blanco", "Gris Oscuro"],
@@ -74,10 +77,12 @@ export const ProductsProvider = ({
       category: "Básica",
       sizes: ["S", "M", "L", "XL"],
       colors: ["Gris", "Azul", "Verde"],
-    }
+    },
   ]);
 
   return (
-    <ProductsContext.Provider value={{ products }}>{children}</ProductsContext.Provider>
+    <ProductsContext.Provider value={{ products }}>
+      {children}
+    </ProductsContext.Provider>
   );
 };

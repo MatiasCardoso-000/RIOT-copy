@@ -16,7 +16,7 @@ export const Header = () => {
     <header className="w-full bg-zinc-900 text-zinc-100 shadow-lg p-2">
       <div className="flex justify-between items-center h-16">
         {/* Logo */}
-        <Link to={"/"} className="flex-shrink-0 flex items-center">
+        <Link to={"/RIOT-copy"} className="flex-shrink-0 flex items-center">
           <h1 className="text-2xl font-bold text-zinc-100">RIOT</h1>
         </Link>
 
@@ -36,8 +36,8 @@ export const Header = () => {
             mobileMenuOpen ? "flex" : "hidden"
           } justify-end absolute top-16 right-0 md:flex items-center space-x-4 bg-zinc-900 text-zinc-100 w-full md:w-auto md:static md:bg-transparent md:space-x-8`}
         >
-          <div className="flex  md:bg-transparent gap-4 px-2 pt-2 pb-3 ">
-            <Link to="/catalogo" className="hover:text-zinc-500 cursor-pointer">
+          <div className="flex  md:bg-transparent items-center gap-4 px-2 pt-2 pb-3 ">
+            <Link to="/RIOT-copy" className="hover:text-zinc-500 cursor-pointer">
               Catálogo
             </Link>
             {/* <Link
@@ -46,7 +46,7 @@ export const Header = () => {
             >
               <Heart className="w-6 h-6 hover:text-zinc-500 cursor-pointer" />
             </Link> */}
-            <div className="flex items-center ">
+            <div className="flex items-center gap-2">
               {showInput && (
                 <input
                   type="text"

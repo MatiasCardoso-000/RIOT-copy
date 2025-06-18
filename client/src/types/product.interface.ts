@@ -4,6 +4,7 @@ export interface Product {
   description: string;
   price: number;
   image: string;
+  imageDetail?: string; // Optional, used for detailed views
   category: string;
   stock?: number;
   sizes?: string[];
