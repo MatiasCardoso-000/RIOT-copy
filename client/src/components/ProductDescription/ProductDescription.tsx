@@ -19,7 +19,7 @@ export const ProductDescription = () => {
       </Link>
       <div>
         {product ? (
-          <div className="flex flex-col md:flex-row  gap-4 justify-around">
+          <div className="flex flex-col md:flex-row  gap-4 justify-around" >
             <img
               src={product.image}
               alt={product.name}
@@ -33,10 +33,10 @@ export const ProductDescription = () => {
               <p>
                 Talle: <span className="font-bold "> {selectedSize}</span>
               </p>
-              <div className="flex items-center gap-2 h-12">
+              <div className="flex items-center gap-2 h-12" >
                 {product.sizes.map((size) => {
                   return (
-                    <div>
+                    <div key={size}>
                       <span
                         className="border p-2 w-8 h-8  flex items-center justify-center cursor-pointer hover:bg-zinc-300 "
                         onClick={() => handleProductSize(size)}

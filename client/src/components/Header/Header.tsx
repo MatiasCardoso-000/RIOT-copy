@@ -33,7 +33,7 @@ export const Header = () => {
           <div className="flex  md:bg-transparent items-center gap-4 px-2 pt-2 pb-3 ">
          
             <Link
-              to="/favoritos"
+              to="favoritos"
               className="hover:text-zinc-500 cursor-pointer"
             >
               <Heart className="w-6 h-6 hover:text-zinc-500 cursor-pointer" />

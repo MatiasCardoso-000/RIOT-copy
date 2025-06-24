@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className="bg-zinc-900 text-zinc-300 mt-12 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold text-zinc-100 mb-4">RIOT Indumentaria</h3>
+            <h3 className="text-lg font-semibold text-zinc-100 mb-4">RIOT URBAN</h3>
             <p className="text-sm">
               La mejor selección de remeras para hombre. Calidad, estilo y comodidad en cada prenda.
             </p>
@@ -29,13 +31,13 @@ export const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold text-zinc-100 mb-4">Síguenos</h4>
             <ul className="text-sm space-y-2">
-              <li><a href="#" className="hover:text-zinc-100 transition-colors">Instagram</a></li>
+              <Link to={'https://www.instagram.com/riot.urban/' } target="_blank" className="hover:text-zinc-100 transition-colors"> Instagram</Link>
             </ul>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-zinc-800">
           <p className="text-sm text-center">
-            © 2025 RIOT Indumentaria. Todos los derechos reservados.
+            © 2025 RIOT URBAN. Todos los derechos reservados.
           </p>
         </div>
       </div>

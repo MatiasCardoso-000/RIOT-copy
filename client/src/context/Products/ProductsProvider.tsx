@@ -87,7 +87,8 @@ export const ProductsProvider = ({
       quantity: 0,
     },
   ]);
-
+  const [favoritesProducts, setFavoriteProducts] = useState<Product[]>([]);
+  const [product, setProduct] = useState<Product>({} as Product);
   const [selectedSize, setSelectedSize] = useState<string>("");
 
   const handleProductSize = (size: string) => {
@@ -96,21 +97,40 @@ export const ProductsProvider = ({
 
   const increaseProductQuantity = (product: Product) => {
     if (product.quantity >= 0) {
-      return setProducts(() => [{ ...product, quantity: product.quantity++ }]);
+      return setProduct({
+        ...product,
+        quantity: product.quantity++,
+      });
     }
   };
 
   const decreaseProductQuantity = (product: Product) => {
     if (product.quantity > 0) {
-      return setProducts(() => [{ ...product, quantity: product.quantity-- }]);
+      return setProducts((prevState) => [
+        ...prevState,
+        { ...product, quantity: product.quantity-- },
+      ]);
     }
+  };
+
+  const handleFavoriteProduct = (product: Product) => {
+    const isFavorite = favoritesProducts.findIndex((p) => p.id === product.id);
+
+    if (!isFavorite) {
+      setFavoriteProducts((prevState) => ({ ...prevState, product }));
+    }
+
+    return favoritesProducts
   };
 
   return (
     <ProductsContext.Provider
       value={{
         products,
+        product,
         selectedSize,
+        favoritesProducts,
+        handleFavoriteProduct,
         handleProductSize,
         increaseProductQuantity,
         decreaseProductQuantity,

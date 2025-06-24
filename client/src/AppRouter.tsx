@@ -1,20 +1,25 @@
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
-import { Catalog } from "./components/Catalog/Catalog";
-
-
+import { Layout } from "./components/Layout/Layout";
+import { App } from "./App";
+import { Favorite } from "./components/Favorites/Favorite";
 
 export const AppRouter = () => {
   return (
     <main className="flex flex-col justify-between min-h-screen bg-zinc-100 relative">
-    <Header/>
-    <Routes>
-      <Route path="/RIOT-copy" element={<Catalog />} />
-      <Route path={`/RIOT-copy/producto/descripcion/:id`} element={<ProductPage />} />
-    </Routes>
-    <Footer/>
+      <Routes>
+        <Route path="/RIOT-copy" element={<Layout />}>
+          <Route index element={<App />} />
+          <Route
+            path={`producto/descripcion/:id`}
+            element={<ProductPage />}
+          />
+          <Route
+            path={`favoritos`}
+            element={<Favorite />}
+          />
+        </Route>
+      </Routes>
     </main>
   );
-}
+};
