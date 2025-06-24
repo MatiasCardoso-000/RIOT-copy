@@ -7,7 +7,7 @@ export const ProductsProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [products] = useState<Product[]>([
+  const [products, setProducts] = useState<Product[]>([
     {
       id: 1,
       name: "Remera Over Size Blanca",
@@ -15,20 +15,24 @@ export const ProductsProvider = ({
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0001.jpg",
       description: "Remera Over Size de algodón 100% de alta calidad.",
-      category: "Básica",
-      sizes: ["S", "M", "L", "XL", "XXL"],
-      colors: ["Negro", "Blanco", "Gris"],
+      category: "Remeras Oversize",
+      sizes: ["S", "M", "L", "XL"],
+      color: "Blanco",
+      colorHex: "#ffffff",
+      quantity: 0,
     },
     {
       id: 2,
-      name: "Remera Over Size Negra",
+      name: "Remera OverSize Unisex Negro",
       price: 15000,
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0002.jpg",
       description: "Remera Over Size de algodón 100% de alta calidad.",
-      category: "Básica",
+      category: "Remeras Oversize",
       sizes: ["S", "M", "L", "XL"],
-      colors: ["Azul", "Negro", "Gris"],
+      color: "Negro",
+      colorHex: "#000000",
+      quantity: 0,
     },
     {
       id: 3,
@@ -37,22 +41,24 @@ export const ProductsProvider = ({
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0003.jpg",
       description: "Remera Over Size de algodón 100% de alta calidad.",
-      category: "Básica",
-      sizes: ["M", "L", "XL", "XXL"],
-      colors: ["Negro", "Blanco"],
+      category: "Remeras Oversize",
+      sizes: ["S", "M", "L", "XL"],
+      color: "Marrón",
+      colorHex: "#513f29",
+      quantity: 0,
     },
     {
       id: 4,
-      name: "Remera Over Size Gris",
+      name: "Remera OverSize Unisex Gris",
       price: 15000,
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/IMG-20250609-WA0004.jpg",
-      imageDetail:
-        "https://matiascardoso-000.github.io/RIOT-copy/modelos/IMG-20250615-WA0002.jpg",
       description: "Remera Over Size de algodón 100% de alta calidad.",
-      category: "Básica",
+      category: "Remeras Oversize",
       sizes: ["S", "M", "L", "XL"],
-      colors: ["Azul Marino", "Blanco", "Gris"],
+      color: "Gris",
+      colorHex: "#323638",
+      quantity: 0,
     },
     {
       id: 5,
@@ -61,27 +67,55 @@ export const ProductsProvider = ({
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/remeras_basicas.jpg",
       description: "Remera Básica de algodón 100% de alta calidad.",
-      imageDetail:
-        "https://matiascardoso-000.github.io/RIOT-copy/Remera-Modelo-Rosa.png",
-      category: "Básica",
-      sizes: ["M", "L", "XL", "XXL"],
-      colors: ["Negro", "Blanco", "Gris Oscuro"],
+      category: "Remeras Básicas",
+      sizes: ["S", "M", "L", "XL"],
+      color: "Rosado",
+      colorHex: "#e3cdd3",
+      quantity: 0,
     },
     {
       id: 6,
-      name: "Remera Básica Marrón Claro",
+      name: "Remera Básica Marrón",
       price: 12000,
       image:
         "https://matiascardoso-000.github.io/RIOT-copy/remeras_basicas_beige.jpg",
       description: "Remera Básica de algodón 100% de alta calidad.",
-      category: "Básica",
+      category: "Remeras Básicas",
       sizes: ["S", "M", "L", "XL"],
-      colors: ["Gris", "Azul", "Verde"],
+      color: "Marrón",
+      colorHex: "#d7b899",
+      quantity: 0,
     },
   ]);
 
+  const [selectedSize, setSelectedSize] = useState<string>("");
+
+  const handleProductSize = (size: string) => {
+    setSelectedSize(size);
+  };
+
+  const increaseProductQuantity = (product: Product) => {
+    if (product.quantity >= 0) {
+      return setProducts(() => [{ ...product, quantity: product.quantity++ }]);
+    }
+  };
+
+  const decreaseProductQuantity = (product: Product) => {
+    if (product.quantity > 0) {
+      return setProducts(() => [{ ...product, quantity: product.quantity-- }]);
+    }
+  };
+
   return (
-    <ProductsContext.Provider value={{ products }}>
+    <ProductsContext.Provider
+      value={{
+        products,
+        selectedSize,
+        handleProductSize,
+        increaseProductQuantity,
+        decreaseProductQuantity,
+      }}
+    >
       {children}
     </ProductsContext.Provider>
   );

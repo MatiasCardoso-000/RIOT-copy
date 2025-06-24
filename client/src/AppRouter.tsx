@@ -12,7 +12,7 @@ export const AppRouter = () => {
     <Header/>
     <Routes>
       <Route path="/RIOT-copy" element={<Catalog />} />
-      <Route path={`/RIOT-copy/product-description/:id`} element={<ProductPage />} />
+      <Route path={`/RIOT-copy/producto/descripcion/:id`} element={<ProductPage />} />
     </Routes>
     <Footer/>
     </main>
